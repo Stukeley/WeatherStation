@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IncludeMaterialDesignFont>true</IncludeMaterialDesignFont>
+        <MaterialDesignFontDirectory>Assets\Fonts\Roboto\</MaterialDesignFontDirectory>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Assets\Keys\" />
+      <Folder Include="Views\Windows\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MaterialDesignColors" Version="3.1.0" />
+      <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="Views\MainWindow.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Assets\Keys\WeatherApiKey.txt" />
+    </ItemGroup>
+
+</Project>
